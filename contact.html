@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - test ai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0077B6;
+            --secondary: #2C3E50;
+            --accent: #F39C12;
+            --bg: #F5F5F5;
+            --text: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 800; }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            padding: 0 5%;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* Common button styles */
+        .btn {
+            display: inline-block;
+            padding: 1.1rem 3rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        /* Common section styles */
+        section {
+            padding: 100px 5%;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card styles */
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar { padding: 0 4%; }
+            .nav-links { display: none; }
+            section { padding: 60px 5%; }
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .btn { padding: 1rem 2rem; width: 100%; text-align: center; }
+            .card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">test ai</div>
+        <div class="nav-links"><a href="index.html" class="nav-link ">Home</a>
+            <a href="about.html" class="nav-link ">About</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+            <a href="services.html" class="nav-link ">Services</a></div>
+    </nav>
+
+    <section style="background: linear-gradient(90deg, var(--primary), var(--accent)); padding: 160px 0 80px 0;">
+  <div class="container">
+    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 800; color: white; font-size: 4rem; margin-bottom: 16px;">Page Header</h1>
+    <nav style="color: white; font-family: 'Inter', sans-serif;">
+      <a href="#" style="color: white; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Home</a>
+      <span style="margin: 0 8px;">&gt;</span>
+      <span style="font-weight: 600;">Page Header</span>
+    </nav>
+  </div>
+</section>
+
+    <section class="contact-section">
+  <div class="contact-form-wrapper">
+    <h2 class="contact-title">Get in Touch</h2>
+    <p class="contact-tagline">Let's discuss your project</p>
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea id="message" name="message" class="form-input" placeholder="Write your message" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+    <section class="contact-info">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3>Address</h3>
+        <p>123 Main Street<br>Anytown, USA 12345</p>
+      </div>
+      <div class="card">
+        <div class="icon">📞</div>
+        <h3>Phone</h3>
+        <p>+1 (555) 123-4567</p>
+      </div>
+      <div class="card">
+        <div class="icon">✉️</div>
+        <h3>Email</h3>
+        <p>info@testai.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="map-section">
+  <div class="map-container">
+    <div class="map-placeholder">
+      <h2 class="map-title">Map Coming Soon</h2>
+      <p class="map-description">Stay tuned for an interactive map showcasing our locations!</p>
+    </div>
+  </div>
+</section>
+
+    <footer style="background-color: #0a0a0a; padding: 80px 0;">
+  <div class="container" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;">
+    <div>
+      <a href="#" style="display: block; margin-bottom: 24px;">
+        <img src="logo.svg" alt="test ai" style="max-width: 200px;">
+      </a>
+      <p style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6;">Empowering Entrepreneurs with Innovative Solutions</p>
+    </div>
+    <div>
+      <h3 style="color: var(--primary); font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 24px; margin-bottom: 24px;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 12px;"><a href="#" style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 16px; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Home</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 16px; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Services</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 16px; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">About</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 16px; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color: var(--primary); font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 24px; margin-bottom: 24px;">Contact Info</h3>
+      <p style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; margin-bottom: 12px;">123 Main Street, Anytown USA</p>
+      <p style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; margin-bottom: 12px;">info@testaistartup.com</p>
+      <p style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; margin-bottom: 12px;">+1 (555) 123-4567</p>
+    </div>
+  </div>
+  <div style="border-top: 1px solid var(--secondary); margin-top: 60px; padding-top: 24px; text-align: center;">
+    <p style="color: var(--bg); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6;">© 2023 test ai. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
