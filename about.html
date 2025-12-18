@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - test ai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0077B6;
+            --secondary: #2C3E50;
+            --accent: #F39C12;
+            --bg: #F5F5F5;
+            --text: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 800; }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            padding: 0 5%;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* Common button styles */
+        .btn {
+            display: inline-block;
+            padding: 1.1rem 3rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        /* Common section styles */
+        section {
+            padding: 100px 5%;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card styles */
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar { padding: 0 4%; }
+            .nav-links { display: none; }
+            section { padding: 60px 5%; }
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .btn { padding: 1rem 2rem; width: 100%; text-align: center; }
+            .card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">test ai</div>
+        <div class="nav-links"><a href="index.html" class="nav-link ">Home</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="contact.html" class="nav-link ">Contact</a>
+            <a href="services.html" class="nav-link ">Services</a></div>
+    </nav>
+
+    <section style="background: linear-gradient(to right, var(--primary), var(--accent)); padding: 160px 0 80px 0;">
+  <div class="container">
+    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 800; color: #fff; font-size: 48px; margin-bottom: 16px;">Page Header</h1>
+    <nav aria-label="Breadcrumb" style="color: #fff;">
+      <ol style="list-style: none; display: flex; font-family: 'Inter', sans-serif; font-size: 16px;">
+        <li><a href="#" style="color: #fff; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Home</a></li>
+        <li style="margin: 0 8px;">&gt;</li>
+        <li>Page Header</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+    <section style="padding: 100px 5%; background-color: var(--bg);">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 48px; color: var(--secondary); text-align: center;">Our <span style="background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Story</span></h2>
+    <p style="font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.6; color: var(--text); text-align: center; margin-top: 24px;">From humble beginnings to becoming a leading innovator in the industry, our story is one of passion, determination, and a relentless pursuit of excellence. Join us as we embark on a journey of empowering entrepreneurs with our cutting-edge solutions.</p>
+    <div style="display: flex; justify-content: center; margin-top: 48px;">
+      <div style="display: flex; flex-direction: column; align-items: center; margin: 0 24px;">
+        <div style="width: 80px; height: 80px; background-color: var(--primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+          <i class="fas fa-rocket" style="font-size: 32px; color: #fff;"></i>
+        </div>
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 24px; color: var(--secondary); margin-top: 16px;">Inception</h3>
+        <p style="font-family: 'Inter', sans-serif; font-size: 16px; color: var(--text); text-align: center; margin-top: 8px;">The beginning of our transformative journey</p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; margin: 0 24px;">
+        <div style="width: 80px; height: 80px; background-color: var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+          <i class="fas fa-chart-line" style="font-size: 32px; color: #fff;"></i>
+        </div>
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 24px; color: var(--secondary); margin-top: 16px;">Growth</h3>
+        <p style="font-family: 'Inter', sans-serif; font-size: 16px; color: var(--text); text-align: center; margin-top: 8px;">Scaling our impact and expanding our reach</p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; margin: 0 24px;">
+        <div style="width: 80px; height: 80px; background-color: var(--primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+          <i class="fas fa-trophy" style="font-size: 32px; color: #fff;"></i>
+        </div>
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 24px; color: var(--secondary); margin-top: 16px;">Success</h3>
+        <p style="font-family: 'Inter', sans-serif; font-size: 16px; color: var(--text); text-align: center; margin-top: 8px;">Achieving milestones and setting new standards</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section style="padding: 80px 0; background-color: var(--bg);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card p-5 h-100" style="background-color: #fff; border-radius: 24px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+              <div class="d-flex align-items-center mb-4">
+                <div class="icon-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: var(--primary); border-radius: 50%; color: #fff; margin-right: 16px;">
+                  <i class="fas fa-bullseye" style="font-size: 24px;"></i>
+                </div>
+                <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--secondary);">Mission</h3>
+              </div>
+              <p style="font-family: 'Inter', sans-serif; color: var(--text);">Empower entrepreneurs with innovative solutions that drive their success and transform industries.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card p-5 h-100" style="background-color: #fff; border-radius: 24px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+              <div class="d-flex align-items-center mb-4">
+                <div class="icon-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: var(--primary); border-radius: 50%; color: #fff; margin-right: 16px;">
+                  <i class="fas fa-eye" style="font-size: 24px;"></i>
+                </div>
+                <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--secondary);">Vision</h3>
+              </div>
+              <p style="font-family: 'Inter', sans-serif; color: var(--text);">Become the go-to platform for entrepreneurs seeking transformative solutions that propel their businesses to new heights.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="team-section">
+  <div class="container">
+    <h2 class="section-title">Our Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">
+          <div class="avatar-circle" style="background-color: var(--primary); color: #fff;">JD</div>
+        </div>
+        <h3 class="team-name">John Doe</h3>
+        <p class="team-role">Founder & CEO</p>
+        <p class="team-bio">John is a serial entrepreneur with a passion for solving complex problems. He leads the team with vision and determination.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <div class="avatar-circle" style="background-color: var(--accent); color: #fff;">JS</div>
+        </div>
+        <h3 class="team-name">Jane Smith</h3>
+        <p class="team-role">Head of Product</p>
+        <p class="team-bio">Jane is an experienced product manager with a keen eye for user experience. She leads the product team to create innovative solutions.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <div class="avatar-circle" style="background-color: var(--secondary); color: #fff;">MR</div>
+        </div>
+        <h3 class="team-name">Michael Roberts</h3>
+        <p class="team-role">Lead Developer</p>
+        <p class="team-bio">Michael is a skilled full-stack developer with a passion for building scalable and efficient software solutions.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">
+          <div class="avatar-circle" style="background-color: var(--primary); color: #fff;">SK</div>
+        </div>
+        <h3 class="team-name">Sarah Kline</h3>
+        <p class="team-role">Marketing Manager</p>
+        <p class="team-bio">Sarah is a talented digital marketer with a knack for crafting compelling campaigns that drive growth and engagement.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="values-section">
+  <div class="values-title">
+    <h2>Our Core Values</h2>
+    <p>Discover the principles that guide our company</p>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon">🚀</div>
+      <h3>Innovation</h3>
+      <p>We constantly explore new ideas and technologies to drive progress.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🤝</div>
+      <h3>Collaboration</h3>
+      <p>We believe in the power of teamwork and building strong partnerships.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">📚</div>
+      <h3>Learning</h3>
+      <p>We are dedicated to continuous learning and personal growth.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">⚖️</div>
+      <h3>Integrity</h3>
+      <p>We uphold the highest ethical standards in everything we do.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .values-section {
+    padding: 80px 0;
+    background-color: var(--bg);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .values-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .values-title h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: var(--secondary);
+    margin-bottom: 12px;
+  }
+
+  .values-title p {
+    font-size: 18px;
+    color: var(--text);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+  }
+
+  .value-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .value-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: var(--primary);
+  }
+
+  .value-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--secondary);
+    margin-bottom: 12px;
+  }
+
+  .value-card p {
+    font-size: 16px;
+    color: var(--text);
+  }
+</style>
+
+    <footer style="background-color: #0a0a0a; color: #F5F5F5; padding: 4rem 2rem;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;">
+    <div class="logo" style="display: flex; align-items: center;">
+      <img src="logo.png" alt="test ai" style="max-width: 180px; margin-right: 1rem;">
+      <h1 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.8rem;">test ai</h1>
+    </div>
+    <div class="quick-links" style="display: flex; flex-direction: column;">
+      <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 1rem;">Quick Links</h3>
+      <a href="#" style="color: #F5F5F5; font-family: 'Inter', sans-serif; font-size: 1rem; text-decoration: none; margin-bottom: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Home</a>
+      <a href="#" style="color: #F5F5F5; font-family: 'Inter', sans-serif; font-size: 1rem; text-decoration: none; margin-bottom: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">About</a>
+      <a href="#" style="color: #F5F5F5; font-family: 'Inter', sans-serif; font-size: 1rem; text-decoration: none; margin-bottom: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Services</a>
+      <a href="#" style="color: #F5F5F5; font-family: 'Inter', sans-serif; font-size: 1rem; text-decoration: none; margin-bottom: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Contact</a>
+    </div>
+    <div class="contact-info" style="display: flex; flex-direction: column;">
+      <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 1rem;">Contact Us</h3>
+      <p style="font-family: 'Inter', sans-serif; font-size: 1rem; margin-bottom: 0.5rem;">Email: info@testai.com</p>
+      <p style="font-family: 'Inter', sans-serif; font-size: 1rem; margin-bottom: 0.5rem;">Phone: +1 (123) 456-7890</p>
+      <p style="font-family: 'Inter', sans-serif; font-size: 1rem; margin-bottom: 0.5rem;">Address: 123 Main St, Anytown USA</p>
+    </div>
+  </div>
+  <div class="copyright" style="text-align: center; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin-top: 2rem;">
+    &copy; 2023 test ai. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>
